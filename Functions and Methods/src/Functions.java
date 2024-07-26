@@ -96,11 +96,11 @@ public class Functions {
 
     //Convert binary to decimal number
 
-    System.out.println("Enter the binary number that you want to conver");
-    int n=in.nextInt();
+    // System.out.println("Enter the binary number that you want to conver");
+    // int n=in.nextInt();
 
-    int decimal=convertBinary(n);
-    System.out.println(decimal);
+    // int decimal=convertBinary(n);
+    // System.out.println(decimal);
 
     
        
