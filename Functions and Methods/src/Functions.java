@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Functions {
+    //Function to calculate the factorial of a number
     public static int factorial(int n) {
         int f = 1;
         if (n == 0) {
@@ -13,6 +14,7 @@ public class Functions {
         }
     }
 
+    //Funtion to calculate the binomial cofficient of a number
     public static int binomial(int n, int r) {
         int binomial;
         if (n == 0) {
@@ -23,6 +25,7 @@ public class Functions {
         return binomial;
     }
 
+    //Function to check if a number is prime or not
     public static void checkPrime(int n){
         for(int i=2;i<=n;i++){
             boolean isPrime=true;
@@ -38,6 +41,7 @@ public class Functions {
     }
 
    }
+    //Function to convert binary number into decimal number
 
    public static int convertBinary(int n){
     int decimal=0;
@@ -55,6 +59,25 @@ public class Functions {
         i++;
     }
     return decimal;
+   }
+   //Function to convert Decimal number into binary number
+   
+   public static int convertDecimal(int n){
+    int binary=0;
+    int pow=0;
+    while(n>0){
+        if( n%2==1 ){
+            binary+=1*(Math.pow(10,pow));
+        }
+        else{
+            binary+=0*(Math.pow(10,pow));
+        }
+        n=n/2;
+        pow++;
+
+    }
+    return binary;
+
    }
 
     public static void main(String[] args) throws Exception {
@@ -102,7 +125,12 @@ public class Functions {
     // int decimal=convertBinary(n);
     // System.out.println(decimal);
 
-    
+    //Convert decimal to binary
+
+    // System.out.println("Enter the number that you want to convert from binary to decimal");
+    // int n = in.nextInt();
+    // int binary=convertDecimal(n);
+    // System.out.println(binary);
        
     }
 }
