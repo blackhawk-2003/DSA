@@ -3,27 +3,27 @@ import java.util.Scanner;
 public class ButterflyPattern {
 
     public static void printPattern(int r) {
-        for(int i=1;i<=r;i++){
-            for(int j=1;j<=i;j++){
+        for (int i = 1; i <= r; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            for( int k=1;k<=2*(r-i);k++){
+            for (int k = 1; k <= 2 * (r - i); k++) {
                 System.out.print(" ");
             }
-            for(int m=1;m<=i;m++){
+            for (int m = 1; m <= i; m++) {
                 System.out.print("*");
             }
             System.out.println();
 
         }
-        for(int i=r;i>=1;i--){
-            for(int j=1;j<=i;j++){
+        for (int i = r; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            for( int k=1;k<=2*(r-i);k++){
+            for (int k = 1; k <= 2 * (r - i); k++) {
                 System.out.print(" ");
             }
-            for(int m=1;m<=i;m++){
+            for (int m = 1; m <= i; m++) {
                 System.out.print("*");
             }
             System.out.println();
