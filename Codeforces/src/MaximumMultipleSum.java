@@ -20,7 +20,6 @@ public class MaximumMultipleSum {
                     maxSum=sum;
                     maxNum=j;
                 }
-                System.out.println(maxSum);
             }
             System.out.println(maxNum);
         }
