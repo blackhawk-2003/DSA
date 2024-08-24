@@ -6,12 +6,13 @@ public class MaximumSubarrayUsingKadanes {
         int currentSum=0;
         for(int i=0;i<arr.length;i++){
             currentSum = currentSum + arr[i];
-            if(currentSum<0){
-                currentSum = 0;
-            }
             if(currentSum > maxSoFar){
                 maxSoFar = currentSum;
             }
+            if(currentSum<0){
+                currentSum = 0;
+            }
+           
         }
         return maxSoFar;
     }
