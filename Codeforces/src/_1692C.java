@@ -1,40 +1,43 @@
-import java.util.Scanner;
-
-public class _1692C {
+import java.util.*;
+ 
+public class _1692C{
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        while(t-->0){
-            char[][] board = new char[8][8];
-            for(int i = 0; i < 8; i++){
-                String str=in.next();
-                for(int j=0;j<8;j++){
-                    board[i][j] = str.charAt(j);
+        Scanner sc = new Scanner(System.in);
+ 
+        int t = sc.nextInt();
+ 
+        while (t > 0) {
+            int row = 8;
+            int col = 8;
+ 
+            String[] str = new String[8];
+            for (int i = 0; i < row; i++) {
+                str[i] = sc.next();
+            }
+ 
+            char chessBorad[][] = new char[row][col];
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    chessBorad[i][j] = str[i].charAt(j);
                 }
             }
-            int row=0;
-            int col=0;
-            for(int i=0;i<8;i++){
-                
-                int count=0;
-                for(int j=0;j<8;j++){
-                    if(i==0||i==7||board[i][0]=='#'||board[i][7]=='#'){
-                        break;
-                    }
-                    else{
-                        if(board[i][j]=='#'){
-                            count++;
-                            col=j;
-                        }
+ 
+            int posRow = 0;
+            int posCol = 0;
+            for (int i = 0; i < 7; i++) {
+                for (int j = 1; j < 7; j++) {
+                    if ((chessBorad[i][j - 1] == '#' && chessBorad[i][j + 1] == '#') && chessBorad[i + 1][j] == '#') {
+                        posRow = i;
+                        posCol = j;
                     }
                 }
-                if(count==1){
-                    row=i;
-                    break;
-                 } 
             }
-            System.out.println((row+1)+" "+(col+1));
+            posRow = posRow + 2;
+            posCol = posCol + 1;
+ 
+            System.out.println(posRow + " " + posCol);
+            t--;
+        }
+        sc.close();
     }
 }
-}
-

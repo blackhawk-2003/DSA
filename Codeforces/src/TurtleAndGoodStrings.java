@@ -14,7 +14,7 @@ public class TurtleAndGoodStrings {
                 System.out.println("NO");
             }
             else{
-                System.out.println("NO");
+                System.out.println("YES");
             }
         }
      }
