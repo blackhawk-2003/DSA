@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class _2008A {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt(); // Number of test cases
+        int t = scanner.nextInt(); 
 
         for (int i = 0; i < t; i++) {
-            int a = scanner.nextInt(); // Number of ones
-            int b = scanner.nextInt(); // Number of twos
+            int a = scanner.nextInt(); 
+            int b = scanner.nextInt(); 
             if(a==0){
                 if(b%2==0){
                     System.out.println("YES");
@@ -25,7 +25,6 @@ public class _2008A {
                     System.out.println("NO");
                 }
             }
-            // Check if the number of ones is even
             else if (a % 2 == 0) {
                 System.out.println("Yes");
             } else {
