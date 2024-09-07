@@ -1,72 +1,43 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.stream.IntStream;
+import java.util.*;
 
 public class _1971B {
-    public static String generateRandomString(String input) {
-        if (input == null || input.isEmpty()) {
-            return ""; // Return empty string for invalid input
-        }
 
-        List<Character> charList = new ArrayList<>();
-        for (char c : input.toCharArray()) {
-            charList.add(c);
-        }
+    public static void solve(String s) {
+        char ch[] = s.toCharArray();
 
-        String randomString;
-        do {
-            // Shuffle the list of characters
-            Collections.shuffle(charList);
-
-            // Build the random string from the shuffled list
-            StringBuilder randomStringBuilder = new StringBuilder();
-            for (char c : charList) {
-                randomStringBuilder.append(c);
+        if (ch.length == 1) {
+            System.out.println("NO");
+            return;
+        } else {
+            Boolean notSame = false;
+            for (int i = 0; i < ch.length - 1; i++) {
+                if (ch[i] != ch[i + 1]) {
+                    char temp = ch[i];
+                    ch[i] = ch[i + 1];
+                    ch[i + 1] = temp;
+                    notSame = true;
+                    break;
+                }
             }
-
-            randomString = randomStringBuilder.toString();
-        } while (randomString.equals(input)); // Ensure the random string is not equal to the original
-
-        return randomString;
-    }
-
-    public static boolean allCharacterSame(String str) {
-        return IntStream.range(1, str.length())
-                .allMatch(i -> str.charAt(i) == str.charAt(0));
-    }
-
-    public static boolean checkPallindrome(String str) {
-        boolean isPalindrome = true;
-        int left = 0;
-        int right = str.length() - 1;
-
-        while (left < right) {
-            if (str.charAt(left) != str.charAt(right)) {
-                isPalindrome = false;
-                break;
+            if (notSame == false) {
+                System.out.println("NO");
+                return;
+            } else {
+                System.out.println("YES");
+                System.out.println(String.valueOf(ch));
+                return;
             }
-            left++;
-            right--;
         }
-        return isPalindrome;
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        while (t-->0) {
-            String str = in.next();
-            if (allCharacterSame(str) || checkPallindrome(str)) {
-                System.out.println("NO");
-            }
-            else{
-                System.out.println("YES");
-                System.out.println(generateRandomString(str));
-            }
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t > 0) {
+            String s = sc.next();
+            solve(s);
+            t--;
+        }
+        sc.close();
     }
-    in.close();
-}
 }

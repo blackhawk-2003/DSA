@@ -12,10 +12,7 @@ public class ArrayReverse {
             first++;
             last--;
         }
-        System.out.println("The reverse of the array is ");
-        for(int i=0;i<n;i++){
-            System.out.print(arr[i]+" ");
-        }
+        
     }
 
     public static void main(String[] args) {
@@ -28,5 +25,9 @@ public class ArrayReverse {
             arr[i]=in.nextInt();
         }
         Reverse(arr);
+        System.out.println("The reverse of the array is ");
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
     }
 }
