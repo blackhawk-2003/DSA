@@ -5,11 +5,17 @@ public class Bubble_Sort {
     public static int[] bubbleSort(int arr[]){
         int length = arr.length;
         for(int i=0;i<=length-2;i++){
+            int swaps=0;
+            if(swaps==0){
+                System.out.println("The array is already sorted"); // This makes the time complexity of the sorted array bubble sort ot O(n)
+                return arr;
+            }
             for(int j=0;j<=length-2-i;j++){
                 if(arr[j]>arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                    swaps++;
                 }
             }
         }
