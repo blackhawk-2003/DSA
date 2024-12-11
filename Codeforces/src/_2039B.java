@@ -4,7 +4,7 @@ public class _2039B {
     public static String calculate(String str) {
         char arr[] = str.toCharArray();
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] != arr[i + 1]) {
+            if (arr[i] == arr[i + 1]) {
                 String s = new StringBuilder().append(arr[i]).append(arr[i + 1]).toString();
                 return s;
             }
